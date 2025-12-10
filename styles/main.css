@@ -1,0 +1,125 @@
+:root {
+    --color-primary: #4A90E2;
+    --color-secondary: #50E3C2;
+    --color-accent: #F5A623;
+    --color-background: #F7F9FC;
+    --color-text: #000000;
+    --color-muted: #9B9B9B;
+
+    --font-primary: 'Helvetica Neue', sans-serif;
+    --font-secondary: 'Geneva', sans-serif;
+}
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-accent);
+
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transform: scale(10px, 10px);
+}
+
+body {
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-family: var(--font-primary);
+}
+
+.mainHeader {
+    background-color: var(--color-primary);
+    width: 100%;
+    height: 80px; /* altura fija para que sea consistente */
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* centra verticalmente h1 y botón */
+    padding: 0 2rem;
+    position: fixed; /* fijo en la parte superior */
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.title {
+    font: 1.8em var(--font-secondary);
+    font-weight: bold;
+    color: var(--color-text);
+}
+
+.mainButton {
+    background-color: var(--color-secondary);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-family: var(--font-primary);
+    transition: all 0.3s ease;
+}
+
+.mainButton:hover {
+    background-color: var(--color-accent);
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+/* Para que el contenido no quede debajo del header */
+main {
+    margin-top: 100px; /* espacio suficiente para el header */
+}
+.contacte {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative; /* importante para que el botón absoluto se posicione respecto al diálogo */
+}
+
+.contacte h1 {
+    font-size: 1.5em;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.contacte ul {
+    padding-left: 2em;
+    list-style: none;
+    font-size: 1.2em;
+}
+
+/* Botón de cerrar en esquina superior derecha */
+#tancaContacte {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 10%;
+    background-color: grey;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+
+    /* centrado perfecto de la X */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+}
+#tancaContacte:hover {
+    background-color: red;
+    color: #fff;
+}
